@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: multipart-environment
+
+  profiles:
+    active: test  # 指定环境
+
+# 开发环境
+
+---
+spring:
+  profiles: dev
+test:
+  env: dev
+
+# 测试环境
+---
+spring:
+  profiles: test
+
+test:
+  env: test

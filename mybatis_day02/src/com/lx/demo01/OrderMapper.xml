@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.demo01.OrderMapper">
+
+
+    <resultMap id="orderMap" type="Order">
+
+        <!--        id 定义主键
+                    property  主键 在pojo 中的属性
+                    column    主键在 数据库中的列名
+        -->
+        <id property="id" column="id"/>
+        <!--        定义普通的属性 -->
+        <result property="userId" column="user_id"/>
+        <result property="number" column="number"/>
+        <result property="createtime" column="createtime"/>
+
+    </resultMap>
+
+<!--  订单查询   -->
+    <select id="queryOrderAll" resultMap="orderMap">
+       select id,user_id,number from orders
+    </select>
+
+</mapper>

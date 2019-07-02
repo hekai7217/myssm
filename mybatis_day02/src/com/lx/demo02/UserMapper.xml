@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.demo02.UserMapper">
+
+
+    <select id="queryOrderUser" resultType="OrderUser">
+
+        SELECT
+            o.id,
+            o.user_id
+            userId,
+            o.number,
+            o.createtime,
+            o.note,
+            u.username,
+            u.address
+            FROM
+            `orders` o
+            LEFT JOIN `user` u ON o.user_id = u.id
+
+    </select>
+    
+    <resultMap id="userMap" type="Order">
+
+<!--        order 的配置 -->
+        <id property="id" column="id"/>
+
+        <result property="userId" column="user_id"/>
+        <result property="number" column="number"/>
+        <result property="note" column="note"/>
+
+<!--     association 属性配置 一对一操作    -->
+        <association property="user" javaType="User">
+
+<!--       user 的id      -->
+            <id property="id" column="id"/>
+
+            <result property="username" column="username"/>
+            <result property="address" column="address"/>
+
+        </association>
+
+    </resultMap>
+
+    <select id="queryUserResuMap" resultMap="userMap">
+
+        SELECT
+            o.id,
+            o.user_id,
+            o.number,
+            o.createtime,
+            o.note,
+            u.username,
+            u.address
+            FROM
+            `orders` o
+            LEFT JOIN `user` u ON o.user_id = u.id
+
+    </select>
+
+
+<!--    一对多查询
+     一个用户有多个订单
+-->
+    <resultMap id="userOrderResultMap" type="User">
+
+        <id property="id" column="id"/>
+
+        <result property="username" column="username"/>
+        <result property="address" column="address"/>
+
+<!--        collection  user 中的集合属性
+            javaType    对应的java类型
+            ofType      集合中的 对应类型
+ -->
+        <collection property="orders" javaType="list" ofType="Order">
+
+            <id property="id" column="id"/>
+
+            <result property="number" column="number"/>
+            <result property="note" column="note"/>
+
+        </collection>
+
+    </resultMap>
+
+    <select id="queryUserOrder" resultMap="userOrderResultMap">
+
+        SELECT
+            u.id,
+            u.username,
+            u.sex,
+            u.address,
+            o.id oid,
+            o.number,
+            o.createtime,
+            o.note
+            FROM
+            `user` u
+            right JOIN `orders` o ON u.id = o.user_id
+
+    </select>
+
+</mapper>

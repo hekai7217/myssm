@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.demo01.UserMapper">
+
+
+<!--    sql 片段 -->
+    <sql id="userFields">
+        id,username,sex,address
+    </sql>
+
+    <!--    参数是QueryVo-->
+    <select id="queryUserByVo" parameterType="QueryVo" resultType="Order">
+        select <include refid="userFields"/> from user where id = #{user.id}
+    </select>
+
+    <!--    动态sql -->
+
+    <!--    根据 条件查询
+            if 条件判断
+    -->
+    <select id="queryUserByWhere1" parameterType="user" resultType="User">
+        select id,username,sex,address from user
+        where 1 = 1
+
+        <if test="sex != null and sex != ''">
+            and sex = #{sex}
+        </if>
+
+        <if test="username != null and username != ''">
+            and username like #{username}
+        </if>
+
+    </select>
+
+    <select id="queryUserByWhere" parameterType="user" resultType="User">
+        select id,username,sex,address from user
+        <!-- where 标签 可以自动添加where 同事处理第一个and关键字  -->
+        <where>
+
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+
+            <if test="username != null and username != ''">
+                and username like #{username}
+            </if>
+
+        </where>
+    </select>
+
+
+<!--    更加 ids 查询 user-->
+
+    <select id="queryUserByIds" parameterType="QueryVo" resultType="User">
+        select * from user
+        <where>
+
+            <foreach collection="ids" item="item" open="id in (" close=")" separator=",">
+                #{item}
+            </foreach>
+
+        </where>
+    </select>
+
+
+</mapper>

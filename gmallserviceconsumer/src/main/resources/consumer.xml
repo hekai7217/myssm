@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--    扫描 注解-->
+    <context:component-scan base-package="com.lx.service"/>
+
+    <!--    dubbo 名称-->
+    <dubbo:application name="order-service-consumer"/>
+
+<!--   去注册中心获取 服务消费  -->
+    <dubbo:registry address="zookeeper://192.168.43.123:2181"/>
+
+<!--    获取 注册中心的服务 -->
+    <dubbo:reference id="userService" interface="com.lx.service.UserService"/>
+
+</beans>

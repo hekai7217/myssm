@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+
+    <!-- 查询的操作 -->
+
+    <!-- id statement sql的id -->
+    <!-- parametertype 声明输入类型-->
+    <!-- resultType 声明输出类型 -->
+    <!-- #{} 输入参数 占位符  相当与 jdbc的 ?  -->
+
+    <select id="queryUserById" parameterType="int" resultType="com.lx.bean.User">
+        select * from user where id = #{id}
+    </select>
+
+    <!--    多个对象 会把 bean放在 list 集合中 -->
+    <select id="queryUserByUsername" parameterType="string" resultType="com.lx.bean.User">
+        select * from user where username like #{username}
+    </select>
+
+    <select id="queryUserByUsername1" parameterType="string" resultType="com.lx.bean.User">
+        select * from user where username like '%${value}%'
+    </select>
+
+    <!--    保存用户 -->
+    <insert id="saveUser" parameterType="com.lx.bean.User">
+        INSERT INTO `user`
+		(username,sex,address) VALUES
+		(#{username},#{sex},#{address})
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUserById" parameterType="com.lx.bean.User">
+	UPDATE `user` SET
+	username = #{username} WHERE id = #{id}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUserById" parameterType="int">
+		delete from user where
+		id=#{id}
+	</delete>
+
+
+
+
+</mapper>
