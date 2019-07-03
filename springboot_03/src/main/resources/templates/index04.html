@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+   <span th:if="${sex} == '男'">
+       性别:男
+   </span>
+
+   <span th:if="${sex} == '女'">
+       性别:女
+   </span>
+
+   <div th:switch="${id}">
+
+       <span th:case="1">id为1</span>
+       <span th:case="2">id为2</span>
+       <span th:case="3">id为3</span>
+
+   </div>
+
+   <table border="1">
+
+       <tr>
+           <td>username</td>
+           <td>password</td>
+       </tr>
+
+       <tr th:each=" u : ${list}">
+           <td th:text="${u.username}"></td>
+           <td th:text="${u.password}"></td>
+       </tr>
+   </table>
+
+   <hr>
+   <table border="1">
+
+       <tr>
+           <td>username</td>
+           <td>password</td>
+       </tr>
+
+       <tr th:each=" maps : ${map}">
+           <td th:each="entry:${maps}" th:text="${entry.value.username}"></td>
+           <td th:each="entry:${maps}" th:text="${entry.value.password}"></td>
+       </tr>
+   </table>
+
+   <hr>
+
+
+
+
+
+</body>
+</html>

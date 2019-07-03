@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  req:<span th:text="${req}"></span> <br>
+  session:<span th:text="${session.sess}"></span> <br>
+  app:<span th:text="${application.app}"></span> <br>
+
+   url:类型 <br>
+
+   <a th:href="@{http://www.baidu.com}">绝对路径</a> <br>
+
+   <a th:href="@{/demo01.html}">相对路径</a> <br>
+
+   <a th:href="@{~/demo01.html}">相对根路径</a> <br>
+
+   <hr>
+
+   <a th:href="@{/show03(id=1,name=zhangSan)}">相对路径传参</a> <br>
+
+   <a th:href="@{/show04/{id}(id=1,name=ccc)}">相对路径传参rest-ful</a>
+
+</body>
+</html>
