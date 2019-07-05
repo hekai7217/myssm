@@ -16,7 +16,17 @@
     	3. 配置 Realm
     	3.1 直接配置实现了 org.apache.shiro.realm.Realm 接口的 bean
     -->
-    <bean id="jdbcRealm" class="com.lx.realms.ShiroRealm">
+    <bean id="jdbcRealm" class="com.lx.realms.MyRealm">
+<!--        配置 reaml 加密操作 -->
+        <property name="credentialsMatcher">
+
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+<!--                加密规则 -->
+                <property name="hashAlgorithmName" value="MD5"/>
+<!--                加密次数 -->
+                <property name="hashIterations" value="100"/>
+            </bean>
+        </property>
     </bean>
 
     <!--
@@ -35,10 +45,6 @@
         <property name="securityManager" ref="securityManager"/>
     </bean>
 
-    <!-- Define the Shiro Filter here (as a FactoryBean) instead of directly in web.xml -
-         web.xml uses the DelegatingFilterProxy to access this bean.  This allows us
-         to wire things with more control as well utilize nice Spring things such as
-         PropertiesPlaceholderConfigurer and abstract beans or anything else we might need: -->
     <!--
     6. 配置 ShiroFilter.
     6.1 id 必须和 web.xml 文件中配置的 DelegatingFilterProxy 的 <filter-name> 一致.
