@@ -41,6 +41,7 @@
     -->
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
           depends-on="lifecycleBeanPostProcessor"/>
+
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>
@@ -54,7 +55,7 @@
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/login.jsp"/>
         <property name="successUrl" value="/list.jsp"/>
-        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <property name="unauthorizedUrl" value="/unLogin.jsp"/>
 
         <!--
         	配置哪些页面需要受保护.
@@ -67,10 +68,16 @@
         <property name="filterChainDefinitions">
             <value>
                 /login.jsp = anon
-                /user.jsp = authc
-                /admin.jsp = authc
 
-                # everything else requires authentication:
+                /shiro_web/login = anon
+
+                /list.jsp = authc
+
+                /upLogin.jsp = logout
+
+                /user.jsp = roles[user]
+                /admin.jsp = roles[admin]
+
                 /** = authc
             </value>
         </property>

@@ -14,7 +14,7 @@
      login page
 
 <%--               /shiro_web/login--%>
-     <form action="shiro_web/login" method="post">
+     <form action="/shiro_web/login" method="post">
 
        username:<input type="text" name="username"> <br>
        password:<input type="text" name="password"> <br>

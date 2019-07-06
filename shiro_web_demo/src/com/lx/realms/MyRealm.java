@@ -7,6 +7,10 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * create by hekai  2019-07-05
  *
@@ -86,7 +90,24 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
 
-        return null;
+//        //从 PrincipalCollection  获取用户登录信息
+//        Object principal = principalCollection.getPrimaryPrincipal();
+//
+//        //使用登录用户信息 获取用户角色
+        Set<String> roles = new HashSet<>();
+//
+//        roles.add("user");
+//
+//        if ("admin".equals(principal)){
+//            roles.add("admin");
+//        }
+//        //创建 SimpleAuthorizationInfo 设置 roles 属性
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roles);
+
+
+        //返回对象
+
+        return info;
     }
 
 
