@@ -44,6 +44,18 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+
+        <!--
+            Hystrix具备拥有回退机制和断路器功能的线程和信号隔离，
+            请求缓存和请求打包，以及监控和配置等功能
+         -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.0.2.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
