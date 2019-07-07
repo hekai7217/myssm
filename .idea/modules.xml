@@ -4,15 +4,18 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/demo01/demo01.iml" filepath="$PROJECT_DIR$/demo01/demo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/gmall/gmall.iml" filepath="$PROJECT_DIR$/gmall/gmall.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gmallserviceconsumer/gmallserviceconsumer.iml" filepath="$PROJECT_DIR$/gmallserviceconsumer/gmallserviceconsumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gmallserviceprovider/gmallserviceprovider.iml" filepath="$PROJECT_DIR$/gmallserviceprovider/gmallserviceprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_day01/mybatis_day01.iml" filepath="$PROJECT_DIR$/mybatis_day01/mybatis_day01.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_day02/mybatis_day02.iml" filepath="$PROJECT_DIR$/mybatis_day02/mybatis_day02.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_spring/mybatis_spring.iml" filepath="$PROJECT_DIR$/mybatis_spring/mybatis_spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myssm.iml" filepath="$PROJECT_DIR$/.idea/myssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis_demo/redis_demo.iml" filepath="$PROJECT_DIR$/redis_demo/redis_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro_hello/shiro_hello.iml" filepath="$PROJECT_DIR$/shiro_hello/shiro_hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro_web_demo/shiro_web_demo.iml" filepath="$PROJECT_DIR$/shiro_web_demo/shiro_web_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_01/springboot_01.iml" filepath="$PROJECT_DIR$/springboot_01/springboot_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_02/springboot_02.iml" filepath="$PROJECT_DIR$/springboot_02/springboot_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_03/springboot_03.iml" filepath="$PROJECT_DIR$/springboot_03/springboot_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_privoder/springboot_privoder.iml" filepath="$PROJECT_DIR$/springboot_privoder/springboot_privoder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_privoder_consumer/springboot_privoder_consumer.iml" filepath="$PROJECT_DIR$/springboot_privoder_consumer/springboot_privoder_consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc_day01/springmvc_day01.iml" filepath="$PROJECT_DIR$/springmvc_day01/springmvc_day01.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc_day02/springmvc_day02.iml" filepath="$PROJECT_DIR$/springmvc_day02/springmvc_day02.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc_demo/springmvc_demo.iml" filepath="$PROJECT_DIR$/springmvc_demo/springmvc_demo.iml" />

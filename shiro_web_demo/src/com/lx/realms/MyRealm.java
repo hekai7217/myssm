@@ -91,16 +91,16 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
 
 //        //从 PrincipalCollection  获取用户登录信息
-//        Object principal = principalCollection.getPrimaryPrincipal();
+        Object principal = principalCollection.getPrimaryPrincipal();
 //
 //        //使用登录用户信息 获取用户角色
         Set<String> roles = new HashSet<>();
 //
-//        roles.add("user");
-//
-//        if ("admin".equals(principal)){
-//            roles.add("admin");
-//        }
+        roles.add("user");
+
+        if ("admin".equals(principal)){
+            roles.add("admin");
+        }
 //        //创建 SimpleAuthorizationInfo 设置 roles 属性
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roles);
 

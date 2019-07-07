@@ -61,7 +61,7 @@ public class LoginController {
 
     }
 
-    @RequestMapping("/logout")
+//    @RequestMapping("/logout")
     public String logout(){
 
         Subject currentUser = SecurityUtils.getSubject();

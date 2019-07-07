@@ -2,9 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/demo01" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redis_demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shiro_hello" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shiro_web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_01" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_02" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_03" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_privoder" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_privoder_consumer" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
