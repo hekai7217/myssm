@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.springboot_stu_privoder.mapper.StuMapper">
+
+    <select id="queryStus" resultType="Student">
+        select * from stus
+    </select>
+
+     <select id="insertStu" parameterType="Student">
+        insert into stus() values();
+    </select>
+
+     <delete id="delStu" parameterType="int">
+         delete from stus where id = #{id}
+    </delete>
+
+</mapper>
