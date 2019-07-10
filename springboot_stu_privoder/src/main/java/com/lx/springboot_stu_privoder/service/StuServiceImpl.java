@@ -15,7 +15,7 @@ import java.util.List;
  * @desc
  */
 // 发布到 注册中心
-//@com.alibaba.dubbo.config.annotation.Service(timeout = 3000,retries = 3)
+@com.alibaba.dubbo.config.annotation.Service(timeout = 3000,retries = 3)
 @Service
 public class StuServiceImpl implements StuService {
 
