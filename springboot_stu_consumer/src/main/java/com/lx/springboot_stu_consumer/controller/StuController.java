@@ -34,9 +34,12 @@ public class StuController {
 
         // 从redis中获取数据
         String stus_json = redisTemplate.opsForValue().get("stus");
-        if (stus_json != null){
+
+        System.out.println("stus_json = " + stus_json);
+
+        if (stus_json != null && stus_json !=""){
             System.out.println(" 从缓存 redis =====中获取数据 ");
-             stus = JSON.parseArray(stus_json, Student.class);
+            stus = JSON.parseArray(stus_json, Student.class);
         }
         if (stus == null) {
             //从数据库总获取数据

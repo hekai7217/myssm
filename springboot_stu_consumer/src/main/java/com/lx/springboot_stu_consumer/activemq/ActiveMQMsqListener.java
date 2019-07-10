@@ -23,7 +23,8 @@ public class ActiveMQMsqListener {
         System.out.println("收到 mq====> " + msg);
 
         if (msg != null && msg.equals("del")){
-            redisTemplate.opsForValue().set("stus",null);
+            redisTemplate.opsForValue().set("stus","");
+            System.out.println("====> redis 中数据删除");
         }
     }
 }
